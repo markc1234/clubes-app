@@ -121,8 +121,7 @@ export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
-  const [gestionOpen, setGestionOpen] = React.useState(false);
-
+  const [anchorEl, setAnchorEl] = React.useState<boolean>(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };

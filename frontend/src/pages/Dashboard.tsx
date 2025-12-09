@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Drawer from "../components/Drawer";
 import { StyledEngineProvider } from "@mui/material/styles";
 
-const IndexPage = () => {
+const Dashboard = () => {
   return (
     <React.Fragment>
       <Container>
@@ -15,4 +15,4 @@ const IndexPage = () => {
   )
 };
 
-export default IndexPage;
+export default Dashboard;

@@ -5,10 +5,9 @@ import {
   IsEmail,
   IsDateString,
 } from 'class-validator';
+import { Unique } from 'typeorm';
 
 export class CreateUsuarioDto {
-  @IsString()
-  password: string;
 
   @IsString()
   @IsOptional()
