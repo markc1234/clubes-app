@@ -23,7 +23,7 @@ import { TipoItemModule } from './tipo_item/tipo_item.module';
       imports: [ConfigModule],
       useFactory: () => ({
         type: 'postgres',
-        host: 'aws-0-us-east-1.pooler.supabase.com',
+        host: process.env.SUPABASE_HOST,
         database: 'postgres',
         port: 6543,
         username: process.env.SUPABASE_DB_USERNAME,
