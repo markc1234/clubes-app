@@ -15,24 +15,21 @@ const PrivateRoute = () => {
       if (error) {
         setIsAuthenticated(false);
       } else {
-        setIsAuthenticated(!!user); // true si el usuario existe, false en caso contrario
+        setIsAuthenticated(!!user); 
       }
     };
 
     checkUser();
   }, [supabase]);
 
-  // Mientras verificamos la autenticación, puedes mostrar un spinner o nada
   if (isAuthenticated === null) {
     return <div>Loading...</div>;
   }
 
-  // Si no está autenticado, redirige al login
   if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/login" replace />;
   }
 
-  // Si está autenticado, muestra el contenido protegido
   return <Outlet />;
 };
 

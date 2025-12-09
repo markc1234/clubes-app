@@ -26,7 +26,7 @@ import { TipoItemModule } from './tipo_item/tipo_item.module';
         host: 'aws-0-us-east-1.pooler.supabase.com',
         database: 'postgres',
         port: 6543,
-        username: 'postgres.dozmmkcizzatqotxfzop',
+        username: process.env.SUPABASE_DB_USERNAME,
         password: process.env.SUPABASE_PASSWORD,
         synchronize: true,
         autoLoadEntities: true,

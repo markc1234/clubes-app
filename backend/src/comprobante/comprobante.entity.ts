@@ -6,9 +6,11 @@ import {
   JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 import { TipoComprobante } from '../tipo_comprobante/tipo_comprobante.entity';
 import { Socio } from '../socio/socio.entity';
+import { ComprobanteItem } from 'src/comprobante_item/comprobante_item.entity';
 
 @Entity('comprobante')
 export class Comprobante {
@@ -34,6 +36,9 @@ export class Comprobante {
   @ManyToOne(() => Socio)
   @JoinColumn({ name: 'socio_id' })
   socio: Socio;
+
+  @OneToMany(() => ComprobanteItem, (comprobanteItem) => comprobanteItem.comprobante)
+  comprobanteItems: ComprobanteItem[];
 
   @Column({ default: true })
   activo: boolean;
